@@ -1,0 +1,176 @@
+/* CSS Reset  */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* ====================== Variables ====================== */
+
+:root {
+    --primary-bg-clr: #6d5d6e;
+    --secondary-bg-clr: #393646;
+    --text-clr: #f4eee0;
+    --main-clr: #9400ff;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--primary-bg-clr);
+    color: var(--text-clr);
+    height: 100vh;
+    width: 100%;
+}
+
+/* ====================== Utility Class ====================== */
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 80vh;
+    width: 70vw;
+    background-color: var(--secondary-bg-clr);
+    border: 0.7rem solid var(--main-clr);
+    border-radius: 2rem;
+    display: grid;
+    grid-template-rows: 8rem auto 16rem;
+    overflow: hidden;
+}
+
+/* ====================== Heading Part Design ======================  */
+
+.heading {
+    padding: 2rem;
+}
+
+.heading h1 {
+    font-size: 4rem;
+    font-variant: small-caps;
+    letter-spacing: 0.3rem;
+}
+
+.inputField {
+    border-top: 0.1rem solid var(--main-clr);
+    border-bottom: 0.3rem solid var(--main-clr);
+    position: relative;
+}
+
+/* ====================== Button Design ======================  */
+
+#btn {
+    font-variant: small-caps;
+    font-size: 2rem;
+    color: var(--text-clr);
+    letter-spacing: 0.1rem;
+    background-color: var(--secondary-bg-clr);
+    padding: 1rem 1.5rem;
+    border: 0.5rem solid var(--main-clr);
+    border-top-left-radius: 0.5rem;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    transition: 0.4s;
+}
+
+#btn:hover {
+    cursor: pointer;
+    color: var(--main-clr);
+    -webkit-box-shadow: inset 0px 0px 40px 0px rgba(0, 9, 64, 1);
+    -moz-box-shadow: inset 0px 0px 40px 0px rgba(0, 9, 64, 1);
+    box-shadow: inset 0px 0px 40px 0px rgba(0, 9, 64, 1);
+}
+
+/* ====================== Input Section Design ======================  */
+
+.inputField textarea {
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-bg-clr);
+    padding: 1.5rem;
+    font-size: 2rem;
+    color: var(--text-clr);
+    resize: none;
+}
+
+.inputField textarea:focus {
+    outline: none;
+}
+
+.inputField textarea:focus container {
+    box-shadow: 0 0 10px 10px var(--main-clr);
+}
+
+/* ====================== Output Section Design ======================  */
+
+.outputField {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: var(--main-clr);
+}
+
+.outputBox {
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-bg-clr);
+    padding-left: 4rem;
+    border: 0.3rem solid var(--main-clr);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.outputBox label {
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-variant: small-caps;
+    letter-spacing: 0.2rem;
+}
+
+.outputBox span {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 50%;
+    }
+
+    .outputBox {
+        padding-left: 3rem;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    html {
+        font-size: 40%;
+    }
+
+    .outputBox {
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 23.5%;
+    }
+}
